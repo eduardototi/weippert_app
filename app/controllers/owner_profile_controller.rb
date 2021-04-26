@@ -13,7 +13,7 @@ class OwnerProfileController < ApplicationController
         @owner_profile = OwnerProfile.new 
     end
 
-    def def create
+    def create
         @owner_profile = OwnerProfile.new(owner_profile_params)
         if @owner_profile.save
           flash[:success] = "Object successfully created"
