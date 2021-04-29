@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">RG</th>
+        <th scope="col">Telefone</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <th scope="row"><%= @owner.id %></th>
+          <td><%= @owner.name %></td>
+          <td><%= @owner.cpf %></td>
+          <td><%= @owner.rg %></td>
+          <td><%= @owner.phone %></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Endereço</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Estado Cívil</th>
+        <th scope="col">Data de Nascimento</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= @owner.address %></td>
+          <td><%= @owner.email %></td>
+          <td><%= @owner.marital_status %></td>
+          <td><%= @owner.birthdate %></td>
+        </tr>
+    </tbody>
+  </table>
+
+  <div class="links text-center">
+    <%= link_to 'Editar', edit_owner_path(@owner), class: 'btn btn-primary mb-3' %>
+    <%= link_to "Excluir", @owner, method: :delete, data: { confirm: 'Tem certeza que deseja deletar este cliente?' }, class: 'btn btn-danger mb-3' %>
+  </div>
+</div>
