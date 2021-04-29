@@ -1,2 +1,0 @@
-class OwnerProfile < ApplicationRecord
-end

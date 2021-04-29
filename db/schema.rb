@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_25_184620) do
+ActiveRecord::Schema.define(version: 2021_04_29_212556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "owner_profiles", force: :cascade do |t|
+  create_table "owners", force: :cascade do |t|
     t.string "name"
-    t.string "cpg"
+    t.string "cpf"
     t.string "rg"
     t.date "birthdate"
-    t.string "addrees"
+    t.string "address"
     t.string "marital_status"
     t.string "email"
+    t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
