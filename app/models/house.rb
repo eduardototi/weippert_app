@@ -1,3 +1,3 @@
 class House < ApplicationRecord
-  belongs_to :owners
+  belongs_to :owner
 end

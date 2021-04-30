@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_121945) do
+ActiveRecord::Schema.define(version: 2021_04_30_155645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,12 @@ ActiveRecord::Schema.define(version: 2021_04_30_121945) do
   create_table "houses", force: :cascade do |t|
     t.string "description"
     t.string "address"
-    t.boolean "rental_status"
-    t.bigint "owners_id", null: false
+    t.boolean "rental_status", default: false
+    t.string "house_name"
+    t.bigint "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["owners_id"], name: "index_houses_on_owners_id"
+    t.index ["owner_id"], name: "index_houses_on_owner_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -50,5 +51,5 @@ ActiveRecord::Schema.define(version: 2021_04_30_121945) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "houses", "owners", column: "owners_id"
+  add_foreign_key "houses", "owners"
 end

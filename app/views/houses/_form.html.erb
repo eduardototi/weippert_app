@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="container-form">
+        <%= simple_form_for [ owner, house ] do |f| %>
+            <%= f.input :house_name, label: "Propriedade:" %>
+            <%= f.input :description, label: "Descrição:" %>
+            <%= f.input :address, label: "Endereço:" %>
+            <%= f.input :owner_id, collection: Owner.all.map { |owner| ["#{owner.name}", owner.id ]}, label: "Proprietário:" %>
+            <%= f.submit "Submit review", class: "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
