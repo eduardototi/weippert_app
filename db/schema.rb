@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_155645) do
+ActiveRecord::Schema.define(version: 2021_04_30_175328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,23 @@ ActiveRecord::Schema.define(version: 2021_04_30_155645) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["owner_id"], name: "index_houses_on_owner_id"
+  end
+
+  create_table "locators", force: :cascade do |t|
+    t.string "name"
+    t.string "cpf"
+    t.string "rg"
+    t.string "marital_status"
+    t.string "address"
+    t.string "phone"
+    t.string "email"
+    t.string "contact_name"
+    t.string "contact_phone"
+    t.string "contact_address"
+    t.string "contact_relation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.date "birthdate"
   end
 
   create_table "owners", force: :cascade do |t|

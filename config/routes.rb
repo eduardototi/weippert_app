@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   resources :houses
 
+  resources :locators
+
 end
