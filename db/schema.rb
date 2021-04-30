@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_175328) do
+ActiveRecord::Schema.define(version: 2021_04_30_202543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contracts", force: :cascade do |t|
+    t.float "reantal_amount"
+    t.float "iptu_amount"
+    t.date "contract_expiration_date"
+    t.integer "contract_term"
+    t.float "discount"
+    t.string "readjust"
+    t.integer "fees"
+    t.boolean "iptu_charge"
+    t.date "next_payment_date"
+    t.boolean "is_active"
+    t.bigint "house_id", null: false
+    t.bigint "locator_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["house_id"], name: "index_contracts_on_house_id"
+    t.index ["locator_id"], name: "index_contracts_on_locator_id"
+  end
 
   create_table "houses", force: :cascade do |t|
     t.string "description"
@@ -68,5 +87,7 @@ ActiveRecord::Schema.define(version: 2021_04_30_175328) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "contracts", "houses"
+  add_foreign_key "contracts", "locators"
   add_foreign_key "houses", "owners"
 end
