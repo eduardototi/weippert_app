@@ -8,9 +8,10 @@ class CreateContracts < ActiveRecord::Migration[6.0]
       t.float :discount
       t.string :readjust
       t.integer :fees
-      t.boolean :iptu_charge
+      t.boolean :iptu_charge, :default => false
       t.date :next_payment_date
-      t.boolean :is_active
+      t.boolean :is_active, :default => false
+      t.float :total_amount
       t.references :house, null: false, foreign_key: true
       t.references :locator, null: false, foreign_key: true
 
