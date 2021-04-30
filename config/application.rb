@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
+
 module WeippertApp
   class Application < Rails::Application
     config.generators do |generate|
@@ -20,5 +22,6 @@ module WeippertApp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+    
   end
 end

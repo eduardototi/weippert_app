@@ -29,10 +29,11 @@
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-          Equipamentos
+          Locatarios
         </a>
         <div class="dropdown-menu bg-dark">
-         
+          <%= link_to 'Nova Locatário', new_locator_path, class: "dropdown-item text-light" %>
+          <%= link_to 'Listar Locatários', locators_path, class: "dropdown-item text-light" %>
         </div>
       </li>
 

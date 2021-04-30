@@ -1,0 +1,28 @@
+
+<div class="container mt-4">
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">RG</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @locators.each do |locator| %>
+        <tr>
+            <th scope="row"><%= locator.id %></th>
+            <td><%= locator.name %></td>
+            <td><%= locator.cpf %></td>
+            <td><%= locator.rg %></td>
+            <td><%= link_to 'Visualizar', locator_path(locator) %></td>
+            <td><%= link_to 'Editar', edit_locator_path(locator) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= link_to 'Voltar', :back, class: 'btn btn-primary mt-3' %>
+</div>
