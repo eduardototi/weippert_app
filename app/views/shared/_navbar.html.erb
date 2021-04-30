@@ -1,35 +1,71 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <%= image_tag "logo.jpg", width: '50px' %>
+  <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <!-- Links -->
+  <% if user_signed_in? %>
+    <%#= current_user.first_name %>
+    <ul class="navbar-nav w-100 justify-content-around">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Proprietários
+        </a>
+        <div class="dropdown-menu bg-dark">
+          <%= link_to 'Novo', new_owner_path, class: "dropdown-item text-light" %>
+          <%= link_to 'Listar', owners_path, class: "dropdown-item text-light" %>
+        </div>
+      </li>
 
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Propriedades
+        </a>
+        <div class="dropdown-menu bg-dark">
+          <%= link_to 'Nova Propriedade', new_house_path, class: "dropdown-item text-light" %>
+          <%= link_to 'Listar propriedades', houses_path, class: "dropdown-item text-light" %>
+        </div>
+      </li>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Equipamentos
+        </a>
+        <div class="dropdown-menu bg-dark">
+         
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Serviços
+        </a>
+        <div class="dropdown-menu bg-dark">
+          
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Ordens de Serviço
+        </a>
+        <div class="dropdown-menu bg-dark">
+        
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Laudos
+        </a>
+        <div class="dropdown-menu bg-dark">
+          
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <%= link_to "Sair", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      </li>
     </ul>
-  </div>
-</div>
+  <% end %>
+</nav>

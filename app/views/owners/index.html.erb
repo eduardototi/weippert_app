@@ -1,0 +1,31 @@
+
+<div class="container mt-4">
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">RG</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @owners.each do |owner| %>
+        <tr>
+            <th scope="row"><%= owner.id %></th>
+            <td><%= owner.name %></td>
+            <td><%= owner.cpf %></td>
+            <td><%= owner.rg %></td>
+            <td><%= link_to 'Visualizar', owner_path(owner) %></td>
+            <td><%= link_to 'Editar', edit_owner_path(owner) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= link_to 'Voltar', :back, class: 'btn btn-primary mt-3' %>
+</div>
+
+
+    
