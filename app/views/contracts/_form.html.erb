@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="container-form">
+        <%= simple_form_for(@contract) do |f| %>
+            <%= f.input :locator_id, collection: Locator.all.map { |locator| ["#{locator.name}", locator.id ]}, label: "Locatário:" %>
+            <%= f.input :house_id, collection: House.where(rental_status: false).map { |house| ["#{house.house_name}", house.id ]}, label: "Propriedade:" %>
+            <%= f.input :reantal_amount, label: "Valor aluguel:" %>
+            <%= f.input :discount, label: "Valor desconto:" %>
+            <%= f.input :contract_term, label: "Prazo contrato:" %>
+            <%= f.input :payment_date, label: "Data mensal de pagamento:" %>
+            <%= f.input :readjust, collection: ['IGPM', 'IGT'], label: "Reajuste:" %>
+            <%= f.input :fees, label: "Multa por atraso:" %>
+            <%= f.input :iptu_charge, as: :boolean, checked_value: true, unchecked_value: false, label: "Cobrança de IPTU:" %>
+            <%= f.input :iptu_amount, label: "Valor do IPTU:" %>
+            <div class="form-actions text-center">
+                <%= f.button :submit, "Salvar", class: 'btn btn-primary' %>
+            </div>
+        <% end %>
+    </div>
+</div>
