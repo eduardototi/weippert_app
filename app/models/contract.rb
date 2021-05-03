@@ -3,8 +3,8 @@ class Contract < ApplicationRecord
   belongs_to :locator
 
   before_save :set_contract_expiration_date, :set_total_amount, :set_contract_active
-  after_save :set_house_rented 
-
+  after_save :set_house_rented
+  
   private
 
   def set_contract_expiration_date
@@ -23,4 +23,5 @@ class Contract < ApplicationRecord
     self.house.rental_status = true
     self.house.save
   end
+
 end

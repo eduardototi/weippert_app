@@ -1,0 +1,79 @@
+<div class="container contract">
+    <h2 class='text-center mt-2'>CONTRATO DE LOCAÇÃO RESIDENCIAL</h2>
+    <p>Pelo presente instrumento particular, as partes a seguir qualificadas têm, entre si, ajustada a LOCAÇÃO do imóvel abaixo descrito e caracterizado mediante as cláusulas e condições seguintes:</p>
+    <p>LOCADORA: <strong><%= @contract.house.owner.name %></strong>, brasileira, <%= @contract.house.owner.marital_status %>, portadora da cédula de identidade nº <%= @contract.house.owner.rg %> e inscrita no CPF nº <%= @contract.house.owner.cpf %>, residente e domiciliada <%= @contract.house.owner.address %>.</p>
+    <p>LOCATÁRIO: <strong><%= @contract.locator.name %></strong>, brasileira, <%= @contract.locator.marital_status %>, portador da Cédula de Identidade Nº <%= @contract.locator.rg %> e inscrito no CPF Nº <%= @contract.locator.cpf %>, domiciliado na <%= @contract.locator.address %>.</p>
+    <h5>IMÓVEL OBJETO DA LOCAÇÃO</h5>
+    <p>Imóvel situado na <%= @contract.house.address %>, com a finalidade exclusivamente para fins residenciais do locatário.</p>
+    <h5>PRAZO DA LOCAÇÃO</h5>
+    <p>O prazo da locação será de <%= @contract.contract_term %> meses, com início em <%= @contract.created_at.strftime("%d/%m/%Y") %> e término em <%= @contract.contract_expiration_date.strftime("%d/%m/%Y") %>, prorrogável por mais 06 (Seis) meses.</p>
+    <h5>VALOR DO ALUGUEL MENSAL</h5>
+    <p>O valor mensal do aluguel será de R$ <%= @contract.reantal_amount %>  (colocar valor em extenso), reajustáveis a cada ano de renovação do contrato.</p>
+    <p>Fica observado que em acordo entre as partes os dois primeiros aluguéis serão no valor de R$ 750,00, sendo em seus vencimentos 15/03/2021 e 15/04/2021.</p>
+    <h5>CLÁUSULAS E CONDIÇÕES RELATIVAS AO CONTRATO DE LOCAÇÃO</h5>
+    <strong>01 - ALUGUEL E REAJUSTE</strong>
+    <p>1.1 - Todos os pagamentos de aluguéis e seus encargos, em razão deste contrato, deverão ser efetuados até o dia <%= @contract.payment_date %> de cada mês, através de Depósito bancário na Conta Corrente nº 00035217-4, Agência nº 0726 da Caixa Econômica Federal ou PIX na chave <%= @contract.house.owner.cpf %>.</p>
+    <p>1.2 - As partes ajustam que, em caso de mora do Locatário no pagamento do aluguel e encargos convencionados, a importância devida será acrescida de multa moratória de <%= @contract.fees %>% (dois por cento), bem como vencerá juros de 1% (um por cento) ao mês, tudo desde a data do vencimento até a liquidação final.</p>
+    <p>1.3 - O aluguel mensal será reajustado na periodicidade permitida em lei, ou seja, a cada (1) ano, de acordo com o índice <%= @contract.readjust %> do mês de fevereiro, ocorrida a partir da data deste instrumento e no período durante a vigência do presente e suas eventuais prorrogações.</p>
+    <p>1.4 – A falta de pagamento na época supra determinada dos aluguéis e encargos, por si só constituirá o Locatário em mora, independentemente de qualquer aviso ou interpelação judicial ou extrajudicial. O recebimento, a pedido do locatário, em outro local, de outra forma, ou sem as penalidades, constituirá mera tolerância da locadora, não sendo, jamais, considerado novação contratual.</p>
+    <strong>02 - IMPOSTOS, TAXAS, DESPESAS COMUNS E AFINS</strong>
+    <p>2.1 - Correrá por conta do Locatário como parte integrante do aluguel ajustado, os IPTUs correspondente ao imóvel locado em sua proporcionalidade, ou seja, o valor do aluguel já contempla o valor do IPTU, devendo ser satisfeito seus pagamentos juntamente com o aluguel coincidente com o mês de seus vencimentos, sob pena de não o fazendo, responder pelas multas e despesas decorrentes dos conseqüentes atrasos. Se, eventualmente, houver a locadora efetuado qualquer desses pagamentos, obrigar-se-á o locatário a reembolsá-lo imediatamente, sem mais formalidades.</p>
+    <p>2.2 - Na hipótese de serem os avisos do IPTU entregues diretamente aos Locatários, este se compromete a entregá-los à Locadora, com antecedência necessária para que sejam providenciados os seus pagamentos, sob pena de responder pelas multas decorrentes do atraso.</p>
+    <strong>03 - LUZ E ÁGUA</strong>
+    <p>3.1 - As despesas com o consumo de luz e água e outras utilidades quando lançados separadamente para a coisa locada, serão sempre de exclusiva responsabilidade do Locatário, que se obriga a fazer os respectivos pagamentos nas épocas e nos montantes devidos junto aos órgãos e repartições competentes.</p>
+    <p>3.2 - Os Locatários serão os únicos responsáveis pelas multas e majorações ou outras comunicações a que der causa, relativamente às despesas referidas nesta cláusula, ainda que lançadas em nome da Locadora.</p>
+    <p>3.3 - Se, porventura, a Locadora efetuar os pagamentos referidos nesta cláusula, a fim de evitar cobrança em seu nome, as quantias por ela despendidas serão reembolsadas pelos Locatários.</p>
+    <p>3.4. O Locatário declara ter conhecimento de que, uma vez em vigor o presente contrato, </strong>será obrigado, em cinco dias, a transferir as contas de energia elétrica e água relativas ao imóvel locado em seu nome, junto à Copel e Sanepar</strong>, arcando com as eventuais despesas decorrentes, sob pena de, em não o fazendo, incorrer em infração contratual de natureza grave, dando ensejo ao despejo. Tal situação deverá ocorrer também na época da desocupação do imóvel pelo mesmo, se responsabilizando pela transferência das contas.</p>
+    <strong>04 – MANUTENÇÃO E RESTITUIÇÃO DO IMÓVEL</strong>
+    <p>4.1 – O Locatário confessa receber o imóvel objeto desta locação em perfeito estado de limpeza, conservação e funcionalidade, já tendo vistoriado o mesmo inicialmente, obrigando-se a devolvê-lo ao Locador ao término do contrato em idênticas condições, sob pena de assim não procedendo, ser-lhe imposto judicialmente o pagamento de tais serviços e materiais gastos, que serão providenciados pela Locadora e a seu critério, sem prejuízo de eventuais perdas e danos.</p>
+
+    <p>4.2- É defeso ao Locatário efetuar qualquer tipo de reforma para adaptação do imóvel ou outras benfeitorias, sejam necessárias, úteis ou voluptuárias, sem que antes tenha colhido por escrito a anuência da Locadora ou seu representante, sob pena de constituir infração contratual, rescisão do presente e despejo, independentemente da obrigação do Locatário em restituir o imóvel em condições originais. Fica vedada, portanto, a pintura ou repintura do imóvel de outra cor que não a original, substituição das portas, colocação de outro tipo de piso sobre o existente, salvo carpete, desde que seja retirado ao fim da locação sem danificar o piso existente, passagem de fios externos, devendo o imóvel ser restituído no estado e forma original.</p>
+
+    <p>4.3- Nos termos dos arts. 35 e 36 da Lei n. 8.245/91, o Locatário não terá direito à indenização por quaisquer benfeitorias (úteis, necessárias ou voluptuárias) efetuadas no imóvel, renunciando, desde já, expressamente, em caráter irrevogável e irretratável, a qualquer indenização ou retenção.</p>
+
+    <p>4.4 - Após o vencimento do prazo ora ajustado para a presente locação, obriga-se o Locatário a comunicar, por escrito, a locadora, com antecedência mínima de 30 (trinta) dias, que irá restituir o imóvel, a fim de que, após a necessária vistoria, sejam realizados os eventuais consertos necessários à reposição do imóvel ao estado em que se encontrava quando foi entregue.</p> 
+
+    <strong>05 - CESSÃO, TRANSFERÊNCIA, SUBLOCAÇÃO E COMODATO</strong>
+
+    <p>5.1 – Sem o consentimento expresso e por escrito do Locador, não será permitida, em hipótese alguma, a transferência deste contrato, nem a sublocação ou empréstimo do imóvel locado, no todo ou em parte, sob pena de grave infração contratual, obrigando-se o Locatário a usar o imóvel exclusivamente para o fim indicado no presente instrumento.</p>
+
+    <strong>06 - MULTA E RESOLUÇÃO</strong>
+
+    <p>6.1 - A infração de qualquer cláusula do presente contrato, em especial as referentes ao uso e manutenção e restituição do imóvel locado, sujeitará o infrator a multa de valor igual a 03 (três) aluguéis mensais, vigentes na data da infração, facultado, ainda, à parte inocente, considerar resolvido o presente contrato sem qualquer aviso ou interpelação, judicial ou extrajudicial, ensejando o despejo por infração contratual no caso do Locatário.</p>
+
+
+
+    <strong>07 - DISPOSIÇÕES GERAIS</strong>
+
+    <p>7.1 – O Locatário fica obrigado a satisfazer a todas as intimações dos poderes públicos a que der causa e a pagar todas as multas que motivar.</p>
+
+    <p>7.2 - Nenhuma intimação dos serviços sanitários motivará a rescisão do presente contrato, salvo procedente de vistoria que apure estar a construção ameaçando ruína ou seja considerada inabitável.</p>
+
+    <p>7.3 - O Locatário desde já faculta a Locadora ou seu representante, examinar ou vistoriar o imóvel locado, quando entender conveniente. No caso do imóvel ser posto à venda, o Locatário permite que os interessados na aquisição o visitem em dia e hora que previamente a Locadora indicará por escrito, desde que haja concordância do Locatário quanto ao dia e horário.</p>
+
+    <p>7.4 - Não poderão os Locatários infringirem as normas referentes ao direito de vizinhança, no que se refere ao sossego, silêncio e respeito aos direitos de seus vizinhos, responsabilizando-se ainda por atos daqueles que permitir o ingresso no imóvel objeto da presente locação, assim como é defeso estocar, guardar ou manter a qualquer título substâncias, materiais e equipamentos nocivos aos outros ocupantes do imóvel.
+    O uso indevido e (ou) diverso do imóvel e a inobservância dos bons costumes, conservação, manutenção e limpeza, em desacordo com normas de segurança, desrespeito ao regulamento ou qualquer obrigação decorrente deste contrato, serão motivos para a rescisão e o conseqüente despejo por infração contratual.
+    Fica o locatário ciente também, que face a existência de outras residências no local, deverá o mesmo manter o mínimo de silêncio, garantindo o sossego dos demais moradores, especialmente na área comum do imóvel (quintal), sob pena de ser considerado também falta grave, acarretando a rescisão contratual por culpa exclusiva do locatário.</p>   
+
+    <p>7.5 - O exercício ou não, de forma diversa, de qualquer direito ou faculdade estabelecida neste contrato, não será considerado renovação de seus termos, nem motiva o fim de desobrigar as partes de suas obrigações contratuais. Se a Locadora admitir, em benefício do Locatário, qualquer atraso no pagamento do aluguel e demais despesas que lhe incumba, ou no cumprimento de qualquer outra obrigação contratual, essa tolerância não poderá ser considerada como alteração das condições deste contrato, ou novação contratual, pois se constituirá em ato de mera liberalidade da Locadora, cabendo ao Locatário as despesas de cobrança e mora.</p>
+
+    <p>7.6 - Para entrega das chaves do objeto da presente locação, após o termo final do presente contrato, o Locatário se obriga a notificar a Locadora dessa intenção com 30 (trinta) dias de antecedência, para apuração de danos e reparos previstos neste contrato, assumindo o Locatário a obrigação de indenizar a Locadora pelas importâncias nela apuradas, independentemente de procedimento judicial.</p>
+
+    <p>7.7- O Locatário desde já autoriza a inclusão de seu nome em bancos de proteção ao crédito (SPC, SERASA), enquanto perdurar a existência de eventuais débitos decorrentes da presente locação.</p>
+
+    <p>7.8- O locatário autoriza a locadora, desde já, a entregar a uma instituição de caridade todos os bens móveis por ele deixado no imóvel locado, em caso de despejo forçado ou abandono do imóvel objeto da presente, sem outras maiores formalidades, não gerando nenhum direito ao locatário a reclamar qualquer tipo de indenização.</p>
+    <p>7.9- As partes supramencionadas declaram terem lido atentamente todas as cláusulas deste contrato, ratificando-as integralmente para todos os fins e efeitos legais.</p>
+
+    <strong>08 - CASOS OMISSOS</strong>
+
+    <p>8.1 - Aplicar-se-ão as disposições relativas à Lei n. 8.245/91 com as modificações constantes da Lei 12.112/2009, para reger eventuais omissões nas cláusulas e condições deste contrato.</p>
+
+    <strong>09 - FORO</strong>
+
+    <p>9.1 - Fica eleito o Foro da comarca de Toledo/PR, para serem dirimidas as eventuais questões que surgirem do presente contrato, renunciando expressamente a qualquer outro, por mais privilegiado que possa ser. Estando justas e contratadas, as partes após lerem e concordarem com todas as cláusulas do presente instrumento, assinam em 02 (Duas) vias de igual teor e forma, juntamente com as testemunhas abaixo nomeadas.</p>
+
+    <p>Toledo, <%= Date.today.strftime("%d/%b/%y") %>.</p>
+    <p>Locatário: <%= @contract.locator.name %></p>
+    <p>Locador: <%= @contract.house.owner.name %></p>
+
+</div>
