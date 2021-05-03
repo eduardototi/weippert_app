@@ -35,8 +35,25 @@ class ContractsController < ApplicationController
       @contract.destroy
       redirect_to contracts_path
     end
+
+    def finish_contract
+      @contract = Contract.find(params[:contract_id])
+      set_contract_status(@contract)
+      set_house_rental_status(@contract.house)
+      redirect_to contracts_path
+    end
   
     private
+
+    def set_house_rental_status(house)
+      house.rental_status = false
+      house.save
+    end
+
+    def set_contract_status(contract)
+      contract.is_active = false
+      contract.save
+    end
   
     def set_contract
       @contract = Contract.find(params[:id])

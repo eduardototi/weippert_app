@@ -2,8 +2,9 @@ class Contract < ApplicationRecord
   belongs_to :house
   belongs_to :locator
 
-  before_save :set_contract_expiration_date, :set_total_amount, :set_contract_active
+  before_save :set_contract_expiration_date, :set_total_amount 
   after_save :set_house_rented
+  before_create :set_contract_active
   
   private
 

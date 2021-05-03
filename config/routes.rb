@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   resources :locators
 
-  resources :contracts
+  resources :contracts do
+    get 'finish_contract', to: 'contracts#finish_contract'  
+  end 
+
 
 end
