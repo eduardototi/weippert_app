@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_202829) do
+ActiveRecord::Schema.define(version: 2021_05_03_135644) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,13 +24,13 @@ ActiveRecord::Schema.define(version: 2021_04_30_202829) do
     t.string "readjust"
     t.integer "fees"
     t.boolean "iptu_charge", default: false
-    t.date "next_payment_date"
     t.boolean "is_active", default: false
     t.float "total_amount"
     t.bigint "house_id", null: false
     t.bigint "locator_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "payment_date"
     t.index ["house_id"], name: "index_contracts_on_house_id"
     t.index ["locator_id"], name: "index_contracts_on_locator_id"
   end

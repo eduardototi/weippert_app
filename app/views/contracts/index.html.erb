@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Propriedade</th>
+        <th scope="col">Locatário</th>
+        <th scope="col">Proprietário</th>
+        <th scope="col">Valor Mensal</th>
+        <th scope="col">Vencimento</th>
+        <th scope="col">Situação</th>
+        <th scope="col">Visualizar</th>
+        <th scope="col">Editar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contracts.each do |contract| %>
+        <tr>
+            <th scope="row"><%= contract.id %></th>
+            <td><%= contract.house.house_name %></td>
+            <td><%= contract.locator.name %></td>
+            <td><%= contract.house.owner.name %></td>
+            <td><%= contract.total_amount %></td>
+            <td><%= contract.payment_date %></td>
+            <td><%= contract.is_active ? "Ativo" : "Encerrado" %></td>
+            <td><%= link_to 'Visualizar', contract_path(contract) %></td>
+            <td><%= link_to 'Editar', edit_contract_path(contract) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%#= link_to 'Voltar', :back, class: 'btn btn-primary mt-3' %>
+</div>

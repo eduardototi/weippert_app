@@ -43,6 +43,6 @@ class ContractsController < ApplicationController
     end
   
     def contract_params
-      params.require(:contract).permit(:reantal_amount, :iptu_amount, :contract_expiration_date, :contract_term, :discount, :readjust, :fees, :iptu_charge, :next_payment_date, :is_active, :total_amount, :house_id, :locator_id)
+      params.require(:contract).permit(:reantal_amount, :iptu_amount, :contract_expiration_date, :contract_term, :discount, :readjust, :fees, :iptu_charge, :payment_date, :is_active, :total_amount, :house_id, :locator_id)
     end
 end

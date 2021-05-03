@@ -6,6 +6,7 @@
             <%= f.input :reantal_amount, label: "Valor aluguel:" %>
             <%= f.input :discount, label: "Valor desconto:" %>
             <%= f.input :contract_term, label: "Prazo contrato:" %>
+            <%= f.input :payment_date, label: "Data mensal de pagamento:" %>
             <%= f.input :readjust, collection: ['IGPM', 'IGT'], label: "Reajuste:" %>
             <%= f.input :fees, label: "Multa por atraso:" %>
             <%= f.input :iptu_charge, as: :boolean, checked_value: true, unchecked_value: false, label: "Cobrança de IPTU:" %>
