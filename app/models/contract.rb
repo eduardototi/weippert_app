@@ -2,9 +2,10 @@ class Contract < ApplicationRecord
   belongs_to :house
   belongs_to :locator
 
-  before_save :set_contract_expiration_date, :set_total_amount 
+  before_save :set_contract_expiration_date, :set_total_amount
   after_save :set_house_rented
   before_create :set_contract_active
+  after_create :create_installment
   
   private
 
@@ -23,6 +24,16 @@ class Contract < ApplicationRecord
   def set_house_rented
     self.house.rental_status = true
     self.house.save
+  end
+
+  def create_installment
+    self.contract_term.times do 
+      @installment = Installment.new
+      @installment.amount = set_total_amount
+      @installment.payment_day = Date.today
+      @installment.contract_id = self.id
+      @installment.save
+    end
   end
 
 end
