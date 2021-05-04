@@ -7,7 +7,7 @@
       <%= f.input :name, label: "Nome:" %>
       <%= f.input :cpf, label: "CPF:" %>
       <%= f.input :rg, label: "RG" %>
-      <%= f.input :birthdate, label: "Nascimento:" %>
+      <%= f.input :birthdate, :order => [ :day, :month, :year ], label: "Nascimento:" %>
       <%= f.input :email, label: "Email" %>
       <%= f.input :phone, label: "Telefone" %>
       <%= f.input :address, label: "Endereço" %>
