@@ -10,8 +10,10 @@ Rails.application.routes.draw do
   resources :locators
 
   resources :contracts do
-    get 'finish_contract', to: 'contracts#finish_contract'  
+    get 'finish_contract', to: 'contracts#finish_contract'
+    resources :installments, only: [ :index ]   
   end 
 
+  get 'change_payment_status', to: 'installments#change_payment_status'
 
 end
