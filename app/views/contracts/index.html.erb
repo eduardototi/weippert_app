@@ -22,8 +22,8 @@
             <td><%= contract.house.house_name %></td>
             <td><%= contract.locator.name %></td>
             <td><%= contract.house.owner.name %></td>
-            <td><%= contract.total_amount %></td>
-            <td><%= contract.payment_date %></td>
+            <td>R$ <%= contract.total_amount %>0</td>
+            <td><%= contract.payment_date.strftime("Dia %d")%></td>
             <td><%= contract.is_active ? "Ativo" : "Encerrado" %></td>
             <td><%= link_to 'Visualizar', contract_path(contract) %></td>
             <td><%= link_to 'Editar', edit_contract_path(contract) %></td>

@@ -5,6 +5,7 @@
         <th scope="col">Id</th>
         <th scope="col">Data de vencimento</th>
         <th scope="col">Propriedade</th>
+        <th scope="col">Valor</th>
         <th scope="col">Contrato</th>
         <th scope="col">Situação</th>
         <th scope="col">Pago</th>
@@ -16,6 +17,7 @@
             <th scope="row"><%= installment.id %></th>
             <td><%= installment.payment_day.strftime("%d/%b/%y") %></td>
             <td><%= installment.contract.house.house_name %></td>
+            <td>R$ <%= installment.contract.total_amount %>0</td>
             <td><%= installment.contract.id %></td>
             <td><%= installment.payment_status ? 'Pago' : "Aberto" %></td>
             <td><%= installment.updated_at.strftime("%d/%b/%y") unless installment.payment_status == false %></td>
