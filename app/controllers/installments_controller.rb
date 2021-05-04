@@ -1,4 +1,5 @@
 class InstallmentsController < ApplicationController
+    before_action :authenticate_user!
     def index 
         @installments = Installment.where(contract_id: params[:contract_id])
     end

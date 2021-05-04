@@ -7,7 +7,7 @@
         <th scope="col">Propriedade</th>
         <th scope="col">Contrato</th>
         <th scope="col">Situação</th>
-        <th scope="col"></th>
+        <th scope="col">Pago</th>
       </tr>
     </thead>
     <tbody>
@@ -18,8 +18,8 @@
             <td><%= installment.contract.house.house_name %></td>
             <td><%= installment.contract.id %></td>
             <td><%= installment.payment_status ? 'Pago' : "Aberto" %></td>
+            <td><%= installment.updated_at.strftime("%d/%b/%y") unless installment.payment_status == false %></td>
             <td><%= link_to 'Pagar', change_payment_status_path(installment) unless installment.payment_status == true %></td>
-            <td><%#= link_to 'Editar', edit_house_path(house) %></td>
         </tr>
       <% end %>
     </tbody>

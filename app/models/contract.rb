@@ -27,13 +27,16 @@ class Contract < ApplicationRecord
   end
 
   def create_installment
+    payment_day = Date.today.at_beginning_of_month + 1.month
     self.contract_term.times do 
       @installment = Installment.new
       @installment.amount = set_total_amount
-      @installment.payment_day = Date.today
+      @installment.payment_day = payment_day
       @installment.contract_id = self.id
       @installment.save
+      payment_day += 1.month
     end
+
   end
 
 end
